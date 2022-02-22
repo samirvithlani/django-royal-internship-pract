@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+
+{% block container %}
+
+<table class="table">
+    <tr>
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">DESCRIPTION`</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for exam in exams %}
+            <tr>
+                <td><a href = "{% url 'exam_detail' exam.pk%}">{{ exam.id}}</a></td>
+                <td>{{exam.name}}</td>
+                <td>{{exam.description}}</td>
+                <td>{{exam.status}}</td>
+                <td>
+                    
+                    <a href = "{% url 'exam_update' exam.pk%}">Update</a>
+                    <a href = "{% url 'exam_delete' exam.pk%}">DELETE</a>
+                </td>
+                    
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+
+
+{% endblock %}

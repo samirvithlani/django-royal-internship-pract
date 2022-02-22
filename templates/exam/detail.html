@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block container %}
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Book Details #{{book.id}}</h5>
+    </div>
+    <div class="card-body">
+    <dl class="row">
+      <dt class="col-sm-3">Book Name</dt>
+      <dd class="col-sm-9">{{ exam.name }}</dd>
+      <dt class="col-sm-3">Book Description</dt>
+      <dt class="col-sm-3">{{exam.description}}</dt>
+      <dt class="col-sm-3">Book Status</dt>
+      <dd class="col-sm-9">{{ exam.status }}</dd>
+    </dl>
+
+    </div>
+</div>
+
+{% endblock %}

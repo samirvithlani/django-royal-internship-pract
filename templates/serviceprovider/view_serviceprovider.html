@@ -1,0 +1,46 @@
+
+{% extends "base.html" %}
+
+{% block container %}
+
+<table class="table">
+    <tr>
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Website</th>
+                <th scope="col">Description</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for serviceprovider in serviceproviders %}
+            <tr>
+                {% comment %} <td><a href = "{% url 'detail_serviceprovider' serviceprovider.pk%}">{{ serviceprovider.id}}</a></td> {% endcomment %}
+                <td><a href = "{% url 'detail_serviceprovider' serviceprovider.pk %}">{{serviceprovider.id}}</a></td>
+                <td>{{serviceprovider.name}}</td>
+                <td>{{serviceprovider.email}}</td>
+                <td>{{serviceprovider.address}}</td>
+                <td>{{serviceprovider.phone}}</td>
+                <td>{{serviceprovider.website}}</td>
+                <td>{{serviceprovider.description}}</td>
+                <td>
+                    
+                    <a class = "btn btn-danger" href = "{% url 'delete_serviceprovider' serviceprovider.pk %}">Delete</a>
+                    <a class = "btn btn-primary" href = "{% url 'update_serviceprovider' serviceprovider.pk %}">Update</a>
+                    {% comment %} <a href = "{% url 'exam_update' exam.pk%}">Update</a>
+                    <a href = "{% url 'exam_delete' exam.pk%}">DELETE</a> {% endcomment %}
+                </td>
+                    
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+
+
+{% endblock %}

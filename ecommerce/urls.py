@@ -27,5 +27,9 @@ urlpatterns = [
     path('ticket/',include('ticket.urls')),
     path('exam/',include('exam.urls')),
     path('serviceprovider/',include('serviceprovider.urls')),
+    path('core/',include('core.urls')),
+    path('cart/',include('cart.urls')),
+    path('simpleform/',include('simpleform.urls')),
+
 
 ]

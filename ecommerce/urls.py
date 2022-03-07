@@ -30,6 +30,7 @@ urlpatterns = [
     path('core/',include('core.urls')),
     path('cart/',include('cart.urls')),
     path('simpleform/',include('simpleform.urls')),
+    path('user/',include('UserApp.urls')),
 
 
 ]

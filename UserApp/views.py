@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.contrib import messages
 from django.contrib.auth.views import redirect_to_login
 from .forms import UserForm
-
+from django.contrib.auth.views import LoginView, LogoutView
 
 # Create your views here.
 
@@ -16,7 +16,7 @@ class BaseRegisterView(SuccessMessageMixin, FormView):
 
     form_class = UserForm
     template_name = 'userportal/registration.html'
-    success_url ="/userportal/login/"
+    success_url ="/user/user-login/"
   
     def form_valid(self, form):
         user = form.save()
@@ -28,4 +28,9 @@ class BaseRegisterView(SuccessMessageMixin, FormView):
         username = cleaned_data["username"]
         return username + " - User Created Successfully..!!"
 
-    
+class UserLoginView(LoginView):
+    template_name = 'userportal/user_login.html'
+    success_url ="userportal/home/"
+
+def index(request):
+    return render(request, 'userportal/index.html')

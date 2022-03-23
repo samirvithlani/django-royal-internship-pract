@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'cart',
     'simpleform',
     'crispy_forms',
+    'sendmail'
     
 ]
 AUTH_USER_MODEL = 'UserApp.User'
@@ -155,6 +156,13 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/user/index/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'pythonforsamir@gmail.com'
+EMAIL_HOST_PASSWORD = 'password'
 
 
 

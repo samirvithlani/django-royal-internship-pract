@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     'cart',
     'simpleform',
     'crispy_forms',
-    'sendmail'
+    'sendmail',
+    'js'
     
 ]
 AUTH_USER_MODEL = 'UserApp.User'
@@ -100,7 +101,7 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'internship_ecommerce',
+        'NAME': 'internship_ecommerce1',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',

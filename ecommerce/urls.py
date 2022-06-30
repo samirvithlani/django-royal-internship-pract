@@ -32,6 +32,7 @@ urlpatterns = [
     path('simpleform/',include('simpleform.urls')),
     path('user/',include('UserApp.urls')),
     path('sendmail/',include('sendmail.urls')),
+    path('js/',include('js.urls')),
 
 
 ]
